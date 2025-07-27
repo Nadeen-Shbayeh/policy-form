@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء بوليصة تأمين</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #eef1f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #fff;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .checkboxes {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .checkboxes label {
+      font-weight: normal;
+    }
+    .form-footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <h2>معلومات البوليصة</h2>
+    <div class="grid">
+      <div><label>رقم البوليصة</label><input type="text" value=""></div>
+      <div><label>السنة</label><input type="text" value=""></div>
+      <div><label>تاريخ الإصدار</label><input type="date" id="issueDate"></div>
+      <div><label>الوقت</label><input type="time" id="issueTime"></div>
+
+      <div><label>الفرع</label><input type="text" value=""></div>
+      <div><label>نوع الوثيقة</label><input type="text" value=""></div>
+      <div><label>التصنيف</label><input type="text" value=""></div>
+      <div><label>نوع التأمين</label><input type="text" value=""></div>
+
+       <div>
+      <label>نوع التغطية</label>
+      <select id="coverageType">
+        <option value="4">تغطية شاملة (شخصي + طرف ثالث + تكميلي )</option>
+        <option value="3">تكميلي</option>
+        <option value="2">طرف ثالث فقط</option>
+
+      </select>
+    </div>
+      <div><label>الوكيل</label><input type="text" value=""></div>
+      <div><label>المدين</label><input type="text" value=""></div>
+      <div><label>المستفيد</label><input type="text" value=""></div>
+
+      <div><label>من تاريخ</label><input type="datetime-local" value=""></div>
+      <div><label>إلى تاريخ</label><input type="datetime-local" value=""></div>
+      <div><label>رقم المرجع</label><input type="text" value=""></div>
+      <div><label>ملاحظات</label><input type="text" placeholder="سبب الإلغاء أو أي ملاحظات..."></div>
+    </div>
+
+    <div class="section">
+      <h2>تفاصيل المركبة</h2>
+      <div class="grid">
+        <div><label>المنطقة</label><input type="text" value=""></div>
+        <div><label>رقم الرخصة</label><input type="text" value=""></div>
+        <div><label>السكن</label><input type="text" value=""></div>
+        <div><label>نوع الاستخدام</label>
+            <select>
+                <option selected>PRIVATE</option>
+                <option selected>COMMERCIAL</option>
+                <option selected>TAXI</option>
+                <option selected>BUS</option>
+                <option selected>RENT CAR</option>
+            </select></div>
+
+        <div><label>خاص؟</label><select>
+            <option selected>PRIVATE</option>
+            <option selected>TEST PLATE</option>
+            <option selected>BOX</option>
+            <option selected>JEEP</option>
+            <option selected>DR. SCHOOL</option>
+            <option selected>ANY CAR</option>
+            <option selected>MOTOR CYCLE</option>
+        </select></div>
+        <div><label>عدد الأبواب</label><input type="number" value=""></div>
+        <div><label>اللون</label><input type="text" value=""></div>
+        <div><label>الركاب</label><input type="number" value=""></div>
+
+        <div><label>الشاسيه</label><input type="text" value=""></div>
+        <div><label>سعة المحرك</label><input type="text" id="engineCapacity" placeholder="سعة المحرك CC"></div>
+        <div><label>اسم الصانع</label><input type="text" value=""></div>
+        <div><label>الطراز</label><input type="text" value=""></div>
+
+        <div><label>نوع المركبة</label><input type="text" value=""></div>
+        <div><label>سنة التصنيع</label><input type="text" value=""></div>
+        <div><label>نوع الوقود</label><input type="text" value=""></div>
+        <div><label>شهادة رقم</label><input type="text" value=""></div>
+      </div>
+
+      
+    </div>
+
+  
+    <div class="section">
+  <h2>تفاصيل القسط</h2>
+  <div class="grid">
+   
+
+    <div>
+      <label>قيمة المركبة (شيكل)</label>
+      <input type="number" id="carValue" placeholder="مثلاً 50000">
+    </div>
+
+    <div>
+      <label>نسبة القسط (%)</label>
+      <input type="number" id="premiumRate" readonly placeholder="1.75">
+    </div>
+
+    <div>
+      <label>الخصم (%)</label>
+      <input type="number" id="discount" value="0">
+    </div>
+
+    <div>
+      <label>القسط النهائي (شيكل)</label>
+      <input type="text" id="finalPremium"  style="background-color: #e2f0ff;">
+    </div>
+  </div>
+
+  <button type="button" onclick="savePolicy()">حفظ البوليصة</button>
+
+
+</div>
+  </div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+
+    const dateInput = document.getElementById('issueDate');
+    const timeInput = document.getElementById('issueTime');
+
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.value = `${yyyy}-${mm}-${dd}`;
+
+    const hh = String(today.getHours()).padStart(2, '0');
+    const min = String(today.getMinutes()).padStart(2, '0');
+    timeInput.value = `${hh}:${min}`;
+  });
+</script>
+
+
+
+<script>
+   
+function calculatePremium() {
+  const coverage = document.getElementById('coverageType').value;
+  const carValue = parseFloat(document.getElementById('carValue').value);
+  const rateInput = document.getElementById('premiumRate');
+  const discount = parseFloat(document.getElementById('discount').value || 0);
+
+  const engineCapacity = parseFloat(document.getElementById('engineCapacity')?.value.trim());
+
+  let premium = 0;
+
+  if (coverage === "2") {
+    if (!engineCapacity) {
+      alert("يرجى إدخال سعة المحرك لحساب التأمين الإلزامي والطرف الثالث");
+      return null;
+    }
+
+    if (engineCapacity < 1000) {
+      premium = 930;
+    } else if (engineCapacity <= 1500) {
+      premium = 1040;
+    } else if (engineCapacity <= 2000) {
+      premium = 1340;
+    } else {
+      premium = 1690;
+    }
+
+    rateInput.value = "";
+
+  } else if (coverage === "3") {
+    if (!carValue) {
+      alert("يرجى إدخال قيمة المركبة لحساب التأمين الشامل");
+      return null;
+    }
+
+    const rate = 1.75;
+    premium = (carValue * rate) / 100;
+    if (premium < 1000) premium = 1000;
+    rateInput.value = rate;
+
+  } else if (coverage === "4") {
+    if (!carValue || !engineCapacity) {
+      alert("يرجى إدخال قيمة المركبة وسعة المحرك");
+      return null;
+    }
+
+    const rate = 1.75;
+    let comprehensive = (carValue * rate) / 100;
+    if (comprehensive < 1000) comprehensive = 1000;
+
+    let mandatory = 0;
+    if (engineCapacity < 1000) {
+      mandatory = 930;
+    } else if (engineCapacity <= 1500) {
+      mandatory = 1040;
+    } else if (engineCapacity <= 2000) {
+      mandatory = 1340;
+    } else {
+      mandatory = 1690;
+    }
+
+    premium = comprehensive + mandatory;
+    rateInput.value = rate;
+  }
+
+  if (discount > 0) {
+    premium -= (premium * discount) / 100;
+  }
+
+  const final = premium.toFixed(2);
+  document.getElementById('finalPremium').value = final + " ₪";
+  return final;
+}
+
+</script>
+
+<script>
+  function savePolicy() {
+    // حساب القسط أولاً
+     const premium = calculatePremium();
+  if (premium === null) return;
+
+   const data = {
+  // معلومات البوليصة
+  policyNumber: document.querySelector('input[type="text"]').value,
+  year: document.querySelectorAll('input[type="text"]')[1].value,
+  issueDate: document.getElementById("issueDate").value,
+  issueTime: document.getElementById("issueTime").value,
+  branch: document.querySelectorAll('input[type="text"]')[2].value,
+  documentType: document.querySelectorAll('input[type="text"]')[3].value,
+  classification: document.querySelectorAll('input[type="text"]')[4].value,
+  insuranceType: document.querySelectorAll('input[type="text"]')[5].value,
+  coverageType: document.getElementById("coverageType").value,
+  agent: document.querySelectorAll('input[type="text"]')[6].value,
+  debtor: document.querySelectorAll('input[type="text"]')[7].value,
+  beneficiary: document.querySelectorAll('input[type="text"]')[8].value,
+  fromDate: document.querySelectorAll('input[type="datetime-local"]')[0].value,
+  toDate: document.querySelectorAll('input[type="datetime-local"]')[1].value,
+  referenceNumber: document.querySelectorAll('input[type="text"]')[9].value,
+  notes: document.querySelectorAll('input[type="text"]')[10].value,
+
+  // تفاصيل المركبة
+  region: document.querySelectorAll('input[type="text"]')[11].value,
+  licenseNumber: document.querySelectorAll('input[type="text"]')[12].value,
+  address: document.querySelectorAll('input[type="text"]')[13].value,
+  usageType: document.querySelectorAll('select')[1].value,
+  privateType: document.querySelectorAll('select')[2].value,
+  doors: document.querySelectorAll('input[type="number"]')[0].value,
+  color: document.querySelectorAll('input[type="text"]')[14].value,
+  passengers: document.querySelectorAll('input[type="number"]')[1].value,
+  chassis: document.querySelectorAll('input[type="text"]')[15].value,
+  engineCapacity: document.querySelectorAll('input[type="text"]')[16].value,
+  manufacturer: document.querySelectorAll('input[type="text"]')[17].value,
+  model: document.querySelectorAll('input[type="text"]')[18].value,
+  vehicleType: document.querySelectorAll('input[type="text"]')[19].value,
+  manufactureYear: document.querySelectorAll('input[type="text"]')[20].value,
+  fuelType: document.querySelectorAll('input[type="text"]')[21].value,
+  certificateNumber: document.querySelectorAll('input[type="text"]')[22].value,
+
+  // تفاصيل القسط
+  carValue: document.getElementById("carValue").value,
+  premiumRate: document.getElementById("premiumRate").value,
+  discount: document.getElementById("discount").value,
+   finalPremium: premium + " ₪",
+};
+
+
+    
+    console.log(data);
+
+
+    alert("تم حفظ البوليصة بنجاح!"); 
+  
+  }
+</script>
+
+</body>
+</html>
